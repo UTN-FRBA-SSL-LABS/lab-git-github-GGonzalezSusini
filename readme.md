@@ -729,9 +729,9 @@ Una vez autenticado con `gh auth login`, `make test` puede verificar el 100% de 
 
 ### Corrección automática en la nube
 
-Cuando hacés `git push`, GitHub ejecuta automáticamente un **workflow de corrección** que corre los mismos checks en la nube y calcula tu puntaje oficial.
+Cuando hacés `git push` con cambios en `operaciones.c` o `readme.md`, GitHub ejecuta automáticamente un **workflow de corrección** que corre los mismos checks en la nube y calcula tu puntaje oficial.
 
-> ⚠️ **Evitá hacer pushes innecesarios.** Cada push lanza una ejecución en servidores de GitHub que consume tiempo de cómputo real. Como `make test` te muestra exactamente los mismos resultados en tu terminal, reservá el push para cuando tengas algo concreto listo: una parte terminada, los últimos checks pasando. No tiene sentido pushear para "ver cómo va" si ya lo podés ver localmente.
+> ⚠️ **Usá `make test` antes de pushear.** Cada ejecución del workflow consume tiempo de cómputo en servidores de GitHub — un recurso compartido. El workflow además solo se activa cuando modificás `operaciones.c` o `readme.md`, que son los archivos del lab. Para el resto de los casos, `make test` te muestra exactamente los mismos resultados en tu terminal sin costo. Reservá el push para cuando una parte esté realmente lista.
 
 Para ver los resultados del workflow:
 
